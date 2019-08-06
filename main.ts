@@ -4,10 +4,19 @@ let boolean = true
 
 let stringList: string[] = ['hoge', 'huga']
 let stringList2: Array<string> = ['hoge', 'huga'] // どっちも同じ書き方
+stringList.map(val => console.log(val))
+stringList.map((val: string) => {
+    console.log(val)
+})
 
 let numberList: number[] = [1, 2]
 let numberList2: Array<number> = [1, 2] // どっちも同じ書き方
-
+let total = numberList.reduce((total, val) => total + val)
+console.log(`total is ${total}`)
+let reduce = (total, val) => total + val
+let total2: number = numberList.reduce(reduce)
+total2 += numberList2.reduce(reduce)
+console.log(`total2 is ${total2}`)
 // 普通のfunction
 function getMessate(message: string): string {
     return message
